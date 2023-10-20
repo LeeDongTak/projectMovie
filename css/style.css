@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+li,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-size: 12px;
+    font-family: 'Dovemayo_gothic';
+}
+
+/*  라이브 러리 */
+.row:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.cell {
+    float: left;
+}
+
+@font-face {
+    font-family: 'Dovemayo_gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* header */
+header {
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    background-color: #fafafa;
+    box-shadow: 0 0 0.6rem 0 #ccc;
+}
+
+
+.headWrap {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logoWrap {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navBar {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logoWrap>span,
+.navBar>li {
+    cursor: pointer;
+}
+
+/* search */
+search{
+    width: 100%;
+    height: 100px;
+}
+
+.searchWrap{
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchWrap > input{
+    width: 300px;
+    border-radius: 7px;
+    border: 1px solid #000;
+    padding: 10px;
+    font-size: 1.5rem;
+    margin-right: 5px;
+}
+.searchWrap > button{
+    border-radius: 7px;
+    border: 1px solid #000;
+    padding: 10px;
+    font-size: 1.5rem;
+    margin-left: 5px;
+}
+
+/* main */
+main {
+    width: 100%;
+    height: 700px;
+}
+
+.mainWrap {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.mainWrap>ul {
+    width: 100%;
+    height: 100%;
+}
+
+.mainWrap>ul>li {
+    width: 40%;
+    height: 26.5rem;
+    margin: 5%;
+    border-radius: 10px;
+    box-shadow: 0 0 0.6rem 0 #555;
+    display: flex;
+    align-items: 0;
+    cursor: pointer;
+}
+
+.imgBox {
+    width: 40%;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgBox>img {
+    width: 75%;
+}
+
+.movicInforBox {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10%;
+}
+
+.movicInforBox>span {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.movieTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    flex: 1;
+}
+
+.movieoverview {
+    flex: 1;
+}
+
+.movievote_average {
+    flex: 1;
+}
+
+/* footer */
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-family: 'Noto Sans KR', sans-serif;
+}
