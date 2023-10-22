@@ -6,45 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>영화 검색 사이트</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
 <body>
-    <header>
-        <div class="headWrap">
-            <div class="logoWrap"><span>영화 검색 사이트</span></div>
-            <ul class="navBar">
-                <li>Home</li>
-                <li>카태고리</li>
-                <li>Search 
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </li>
-            </ul>
-        </div>
-    </header>
-    <search>
-        <div class="searchWrap">
-            <input id="idSearch" type="text" placeholder="Search">
-            <button id="searchBtn" onclick="titleSearch()">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-        </div>
-    </search>
-    <main>
-        <div class="mainWrap row">
-            <ul id="movieList">
-               
-            </ul>
-        </div>
-    </main>
-    <footer>
-        copyLight@LeeDongTak
-    </footer>
+    <div class="wrap">
+        <header>
+            <div class="headWrap">
+                <div class="logoWrap"><span>영화 검색 사이트</span></div>
+                <ul class="navBar">
+                    <li>Home</li>
+                    <li>카태고리</li>
+                    <li onclick="addClassName()">Search
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <search>
+            <div class="searchWrap">
+                <div>
+                    <input id="idSearch" class="actvIn" type="text" placeholder="Search">
+                    <button id="searchBtn" onclick="titleSearch()">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <p></p>
+            </div>
+        </search>
+        <main>
+            <div class="mainWrap row">
+                <div class="htmlBody" onclick="sortBodyClick()"></div>
+                <div class="sortWrap">
+                    <div class="sortBox" onclick="sortToggle()">
+                        <div class="sortBtn">정렬 
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                        <ul>
+                            <li class="1" onclick="sortTitleChe(1)">가나다 순</li>
+                            <li class="2" onclick="sortTitleChe(2)">높은 평점 순</li>
+                            <li class="3" onclick="sortTitleChe(3)">낮은 평점 순</li>
+                            <li class="4" onclick="sortTitleChe(4)">최신 순</li>
+                            <li class="5" onclick="sortTitleChe(5)">오래된 순</li>
+                        </ul>
+                    </div>
+                </div>
+                <ul id="movieList">
 
-
+                </ul>
+            </div>
+        </main>
+        <footer>
+            copyLight@LeeDongTak
+        </footer>
+    </div>
 
     <script src="js/script.js"></script>
+    <script src="js/btnEvent.js"></script>
 </body>
 
 </html>

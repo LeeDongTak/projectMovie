@@ -10,6 +10,7 @@ const options = {
 
 let movieList = document.querySelector("#movieList")
 let idSearch = document.querySelector("#idSearch")
+let alertText = document.querySelector('.searchWrap > p')
 
 let result = ""; // li의 정보를 담는 변수
 
@@ -17,11 +18,9 @@ let result = ""; // li의 정보를 담는 변수
 let printId = (id) => {
     alert(`영화 id : ${id}`)
 }
-let searchData = []; // title의 정보를 담은 배열
+let searchData = []; // 영화 정보를 담은 배열
 let searchResult = ""; // 검색한 li의 정보를 담는 변수
 // 검색함수
-
-
 let titleSearch = () => {
     let SearchInput = idSearch.value;
     console.log(SearchInput)
@@ -34,13 +33,11 @@ let titleSearch = () => {
                 }
             }
         }
-
     })
 
-    // console.log(searchFil[0].title.indexOf("S", 4))
     if (searchFil.length === 0 || SearchInput === "") {
-        alert("영화제목이 올바르지 않습니다. ");
-        location.reload();
+        let errText = `${SearchInput} 과 일치하는 영화제목이 없습니다. `
+        alertText.innerText = errText;
         return;
     } else {
         searchResult = "";
@@ -59,16 +56,15 @@ let titleSearch = () => {
 
             searchResult += titleAppend;
             movieList.innerHTML = searchResult;
-
+            alertText.innerText = '';
         }
-
     }
-
-
 }
 
 
-console.log(searchData)
+
+
+
 fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
     .then(response => response.json())
     .then(response =>
@@ -94,7 +90,6 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
             movieList.innerHTML = result
 
             searchData.push(item)
-
         })
     )
     .catch(err => console.error(err));
