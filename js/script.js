@@ -12,6 +12,14 @@ let movieList = document.querySelector("#movieList")
 let idSearch = document.querySelector("#idSearch")
 let alertText = document.querySelector('.searchWrap > p')
 
+// Enter키 
+let enter = (e) => {
+    if(window.event.keyCode == 13) {
+        titleSearch()
+    }
+}
+
+
 let result = ""; // li의 정보를 담는 변수
 
 // 아이디를 alert으로 출력하는 함수
@@ -23,20 +31,24 @@ let searchResult = ""; // 검색한 li의 정보를 담는 변수
 // 검색함수
 let titleSearch = () => {
     let SearchInput = idSearch.value;
-    console.log(SearchInput)
     // 내가 검색한 제목과 리스트의 제목이 일치하는지 확인
     let searchFil = searchData.filter((item) => {
         for (let i = 0; i < searchData.length; i++) {
             for (let k = 0; k < searchData[i].title.length; k++) {
-                if (item.title.startsWith(SearchInput, k)) {
+                if (item.title.toLowerCase().startsWith(SearchInput.toLowerCase(), k)) {
                     return item.title
                 }
             }
         }
     })
-
-    if (searchFil.length === 0 || SearchInput === "") {
-        let errText = `${SearchInput} 과 일치하는 영화제목이 없습니다. `
+    if (searchFil.length === 0 ) {
+        let errText = `${SearchInput}과 일치하는 영화제목이 없습니다. `
+        alertText.style.visibility = "visible"
+        alertText.innerText = errText;
+        return;
+    }else if (SearchInput === "") {
+        let errText = `제목이 입력되지 않았습니다. `
+        alertText.style.visibility = "visible"
         alertText.innerText = errText;
         return;
     } else {
@@ -57,6 +69,7 @@ let titleSearch = () => {
             searchResult += titleAppend;
             movieList.innerHTML = searchResult;
             alertText.innerText = '';
+            alertText.style.visibility = "hidden"
         }
     }
 }

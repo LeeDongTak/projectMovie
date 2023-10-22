@@ -29,7 +29,7 @@
         <search>
             <div class="searchWrap">
                 <div>
-                    <input id="idSearch" class="actvIn" type="text" placeholder="Search">
+                    <input id="idSearch" class="actvIn" type="text" placeholder="Search" onkeyup="enter()" autofocus >
                     <button id="searchBtn" onclick="titleSearch()">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
@@ -42,7 +42,7 @@
                 <div class="htmlBody" onclick="sortBodyClick()"></div>
                 <div class="sortWrap">
                     <div class="sortBox" onclick="sortToggle()">
-                        <div class="sortBtn">정렬 
+                        <div class="sortBtn">정렬
                             <i class="fa-solid fa-angle-down"></i>
                         </div>
                         <ul>

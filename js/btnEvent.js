@@ -40,16 +40,8 @@ let sortTitleChe = (value) => {
 
 sortData = ''
 let sortEvent = (value) => {
-    // searchData.forEach(item => {
-    //     searchDataSort += item
-    // });
     let listClass = '';
-    sortList.forEach((item, index) => {
-        if (item.classList.contains(value)) {
-            listClass += item.classList.contains(value)
-        }
-    })
-
+    
     let resultSort = '';
     // 정렬 : 가나다 순
     if (value === 1) {
@@ -78,6 +70,19 @@ let sortEvent = (value) => {
         })
     }
     // 정렬 : 낮은 평점 순
+    if (value === 3) {
+        // 영화데이터 정렬
+        resultSort = searchData.sort((a, b) => {
+            if (a.vote_average < b.vote_average) {
+                return -1
+            } else if (a.vote_average > b.vote_average) {
+                return 1
+            } else {
+                return 0
+            }
+        })
+    }
+    // 정렬 : 최신 순
     if (value === 4) {
         // 영화데이터 정렬
         resultSort = searchData.sort((a, b) => {
@@ -90,6 +95,7 @@ let sortEvent = (value) => {
             }
         })
     }
+    // 정렬 : 오래된 순
     if (value === 5) {
         // 영화데이터 정렬
         resultSort = searchData.sort((a, b) => {
@@ -121,7 +127,6 @@ let sortEvent = (value) => {
         movieList.innerHTML = sortResult;
     }
 
-    console.log(resultSort);
 
 }
 

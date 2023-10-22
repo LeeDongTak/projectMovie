@@ -148,7 +148,7 @@ search{
 
 /* 오류 메시지 */
 .searchWrap > p{
-    display: none;
+    visibility: hidden;
     text-align: center;
     margin-top: 9px;
     color: red;
@@ -195,6 +195,7 @@ main {
     right: 5%;
     cursor: pointer;
     z-index: 99;
+    width: 9rem;
 }
 .sortBox > .sortBtn{
     padding: 0.7rem;
