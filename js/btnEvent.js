@@ -151,6 +151,9 @@ let mobileMenu = (value) => {
 // 모바일 메뉴 버튼 클릭 이밴트
 let mobileMenuBtn = () => {
     mobileheader.classList.toggle('active');
+    for (let i = 0; i < m_navBar.length; i++) {
+        m_navBar[i].classList.remove('active');
+    }
     m_errText.style.visibility = "hidden"
     alertText.style.visibility = "hidden"
 }
