@@ -13,6 +13,7 @@ let idSearch = document.querySelector("#idSearch")
 let m_Search = document.querySelector("#m_Search")
 let alertText = document.querySelector('.searchWrap > p')
 let m_alertText = document.querySelector('.m_navBar > ul > li > div >  p')
+let searchInp = document.querySelector('search')
 
 // Enter키 
 let enter = (e) => {
@@ -32,7 +33,7 @@ let printId = (id) => {
 // 검색함수
 let searchData = []; // 영화 정보를 담은 배열
 let searchResult = ""; // 검색한 li의 정보를 담는 변수
-
+console.log(searchInp)
 let titleSearch = (v) => {
     let SearchInput = ''
     if (v === 1) {
@@ -53,17 +54,27 @@ let titleSearch = (v) => {
     })
     if (searchFil.length === 0) {
         let errText = `${SearchInput}과 일치하는 영화제목이 없습니다. `
-        alertText.style.visibility = "visible"
-        m_alertText.style.visibility = "visible"
-        alertText.innerText = errText;
-        m_alertText.innerText = errText;
+        if (v === 1) {
+            alertText.style.visibility = "visible"
+            m_alertText.style.visibility = "hidden"
+            m_alertText.innerText = errText;
+        }else if (v === 2) {
+            m_alertText.style.visibility = "visible"
+            alertText.style.visibility = "hidden"
+            m_alertText.innerText = errText;
+        }   
         return;
     } else if (SearchInput === "") {
         let errText = `제목이 입력되지 않았습니다. `
-        alertText.style.visibility = "visible"
-        m_alertText.style.visibility = "visible"
-        alertText.innerText = errText;
-        m_alertText.innerText = errText;
+        if (v === 1) {
+            alertText.style.visibility = "visible"
+            m_alertText.style.visibility = "hidden"
+            m_alertText.innerText = errText;
+        }else if (v === 2) {
+            m_alertText.style.visibility = "visible"
+            alertText.style.visibility = "hidden"
+            m_alertText.innerText = errText;
+        }   
         return;
     } else {
         searchResult = "";

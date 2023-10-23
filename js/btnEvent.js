@@ -6,11 +6,16 @@ let htmlBody = document.querySelector('.htmlBody')
 let sortList = document.querySelectorAll('.sortBox > ul > li')
 let m_navBar = document.querySelectorAll('.m_navBar > ul > li > span')
 let mobileheader = document.querySelector('mobileheader')
+let m_errText = document.querySelector('.m_navBar > ul > li > div >  p')
 
 
 // search버튼 이벤트
 function addClassName() {
     searchActive.classList.toggle('active');
+    if (searchActive.classList.contains('active') === false) {
+        alertText.style.visibility = "hidden"
+        console.log()
+    }
 }
 
 //정렬박스 이벤트
@@ -133,14 +138,19 @@ let sortEvent = (value) => {
 // 모바일 메뉴 클릭 이벤트
 let mobileMenu = (value) => {
     for (let i = 0; i < m_navBar.length; i++) {
-        if (i+1 === value) {
+        if (i + 1 === value) {
             m_navBar[i].classList.toggle('active');
-            console.log(m_navBar[i])
+            if (m_navBar[i].classList.contains('active') === false) {
+                m_errText.style.visibility = "hidden"
+                alertText.style.visibility = "hidden"
+            }
         }
     }
 }
 
-// 모바일 메뉴 클릭 이밴트
+// 모바일 메뉴 버튼 클릭 이밴트
 let mobileMenuBtn = () => {
     mobileheader.classList.toggle('active');
+    m_errText.style.visibility = "hidden"
+    alertText.style.visibility = "hidden"
 }

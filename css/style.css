@@ -557,7 +557,9 @@ footer {
     .imgBox>img {
         width: 60%;
     }
-    
+    .searchWrap>p{
+        visibility: hidden;
+    }
 }
 
 @media all and (max-width:763px) {
