@@ -4,6 +4,8 @@ let sortBox = document.querySelector('.sortBox')
 let sortBtn = document.querySelector('.sortBtn')
 let htmlBody = document.querySelector('.htmlBody')
 let sortList = document.querySelectorAll('.sortBox > ul > li')
+let m_navBar = document.querySelectorAll('.m_navBar > ul > li > span')
+let mobileheader = document.querySelector('mobileheader')
 
 
 // search버튼 이벤트
@@ -41,7 +43,7 @@ let sortTitleChe = (value) => {
 sortData = ''
 let sortEvent = (value) => {
     let listClass = '';
-    
+
     let resultSort = '';
     // 정렬 : 가나다 순
     if (value === 1) {
@@ -99,7 +101,7 @@ let sortEvent = (value) => {
     if (value === 5) {
         // 영화데이터 정렬
         resultSort = searchData.sort((a, b) => {
-            if (a.release_date <b.release_date) {
+            if (a.release_date < b.release_date) {
                 return -1
             } else if (a.release_date > b.release_date) {
                 return 1
@@ -126,9 +128,19 @@ let sortEvent = (value) => {
         sortResult += titleAppend;
         movieList.innerHTML = sortResult;
     }
-
-
 }
 
+// 모바일 메뉴 클릭 이벤트
+let mobileMenu = (value) => {
+    for (let i = 0; i < m_navBar.length; i++) {
+        if (i+1 === value) {
+            m_navBar[i].classList.toggle('active');
+            console.log(m_navBar[i])
+        }
+    }
+}
 
-
+// 모바일 메뉴 클릭 이밴트
+let mobileMenuBtn = () => {
+    mobileheader.classList.toggle('active');
+}

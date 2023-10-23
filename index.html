@@ -14,6 +14,41 @@
 
 <body>
     <div class="wrap">
+        <mobileheader>
+            <div class="m_nav_wrap">
+                <div class="m_logoWrap"><span>영화 검색 사이트</span></div>
+                <div class="m_navBar">
+                    <ul>
+                        <li><span>Home</span></li>
+                        <li>
+                            <span onclick="mobileMenu(2)">카태고리</span>
+                            <ul>
+                                <li>넥플리스</li>
+                                <li>디즈니 플러스</li>
+                                <li>왓차</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span onclick="mobileMenu(3)">Search <i class="fa-solid fa-magnifying-glass"></i></span>
+                            <div>
+                                <div>
+                                    <input id="m_Search" type="text" placeholder="Search"
+                                        onkeyup="enter()" autofocus>
+                                    <button id="searchBtn" onclick="titleSearch(2)">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </div>
+                                <p></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="m_menuBtn" onclick="mobileMenuBtn()">
+                <i class="fa-solid fa-xmark"></i>
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </mobileheader>
         <header>
             <div class="headWrap">
                 <div class="logoWrap"><span>영화 검색 사이트</span></div>
@@ -29,8 +64,8 @@
         <search>
             <div class="searchWrap">
                 <div>
-                    <input id="idSearch" class="actvIn" type="text" placeholder="Search" onkeyup="enter()" autofocus >
-                    <button id="searchBtn" onclick="titleSearch()">
+                    <input id="idSearch" type="text" placeholder="Search" onkeyup="enter()" autofocus>
+                    <button id="searchBtn" onclick="titleSearch(1)">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
